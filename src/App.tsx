@@ -9,6 +9,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import EmployeeDashboard from "./pages/EmployeeDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
+import AdminEmployees from "./pages/AdminEmployees";
+import AdminReports from "./pages/AdminReports";
 import WorkEntry from "./pages/WorkEntry";
 import History from "./pages/History";
 import NotFound from "./pages/NotFound";
@@ -102,7 +104,7 @@ function AppRoutes() {
         path="/admin/employees" 
         element={
           <ProtectedRoute requiredRole="admin">
-            <AdminDashboard />
+            <AdminEmployees />
           </ProtectedRoute>
         } 
       />
@@ -110,7 +112,7 @@ function AppRoutes() {
         path="/admin/reports" 
         element={
           <ProtectedRoute requiredRole="admin">
-            <AdminDashboard />
+            <AdminReports />
           </ProtectedRoute>
         } 
       />
