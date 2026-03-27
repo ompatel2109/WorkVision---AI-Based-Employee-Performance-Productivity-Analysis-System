@@ -1,73 +1,68 @@
-# Welcome to your Lovable project
+# NexusAI - Employee Performance & Productivity Analysis System
 
-## Project info
+## Project Overview
+NexusAI is a comprehensive system designed to track, analyze, and predict employee performance using AI/ML.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Prerequisites
+- Node.js & npm
+- Python 3.x
+- MongoDB (Running locally or Compass)
 
-## How can I edit this code?
+## How to Run
 
-There are several ways of editing your application.
+### 1. Backend (Flask API)
+Open a terminal and run:
+```bash
+# Navigate to project root
+cd "c:\Users\omdpa\Desktop\CHARUSAT\sem 6\SGP IV\SGP PROJECT\EMPLOYEE PERFORMANCE SYSTEM"
 
-**Use Lovable**
+# Install dependencies (if not done)
+pip install -r backend/requirements.txt
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+# Start the server
+python backend/app.py
+```
+*The backend runs on `http://localhost:5000`*
 
-Changes made via Lovable will be committed automatically to this repo.
+### 2. Frontend (React App)
+Open a **new** terminal (keep the backend running) and run:
+```bash
+# Navigate to project root
+cd "c:\Users\omdpa\Desktop\CHARUSAT\sem 6\SGP IV\SGP PROJECT\EMPLOYEE PERFORMANCE SYSTEM"
 
-**Use your preferred IDE**
+# Install dependencies (if not done)
+npm install
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
+npm run dev -- --host
+```
+*The frontend runs on `http://localhost:8080` (or similar, check terminal output)*
+
+## Features
+- **Role-Based Access**: Employee, Manager, Admin.
+- **Visual Analytics**: Interactive charts for performance data.
+- **AI Predictions**: Productivity scores based on synthetic data.
+- **Profile & Settings**: User management and theme customization.
+
+## Credentials (Demo)
+
+After running the system reset, use these credentials:
+
+| Role     | Email                        | Password      |
+|----------|------------------------------|---------------|
+| **Admin**    | `admin@workvision.com`      | `admin123`    |
+| **Manager**  | `manager.eng@workvision.com`| `manager123`  |
+| **Employee** | `employee1@workvision.com`  | `user123`     |
+
+To reset the database again, run:
+```bash
+python backend/reseed_system.py
 ```
 
-**Edit a file directly in GitHub**
+Sales =manager@sales.com/password123
+Marketing =manager@marketing.com/password123
+HR =manager@hr.com/password123
+Finance =manager@finance.com/password123
+Engineering =manager@engineering.com/password123
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)

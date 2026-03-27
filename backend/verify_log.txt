@@ -1,0 +1,14 @@
+Starting...
+--- Starting Score Integration Verification (urllib) ---
+Employee logged in. ID: 6992d262705fbb1cdf378a5e
+Manager logged in.
+Task Assigned: 6992d2da6dc6e1fdb353abe4
+Task Submitted with 5.5 hours.
+Task Verified (Completed).
+
+--- Dashboard Data ---
+Current Score: 62
+Category: Medium Performer
+Summary: {'efficiency': 0.56, 'hours_worked': 160.8, 'tasks_completed': 90}
+
+SUCCESS: Dashboard reflects the new task data!

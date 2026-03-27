@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "C:\Users\omdpa\Desktop\CHARUSAT\sem 6\SGP IV\SGP PROJECT\EMPLOYEE PERFORMANCE SYSTEM\backend\test_endpoint2.py", line 23, in <module>
+    get_employee_detail('6992d262705fbb1cdf378a5e')
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omdpa\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\omdpa\Desktop\CHARUSAT\sem 6\SGP IV\SGP PROJECT\EMPLOYEE PERFORMANCE SYSTEM\backend\routes\manager_routes.py", line 248, in get_employee_detail
+    return jsonify({
+           ~~~~~~~^^
+        "employee": employee,
+        ^^^^^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+        }
+        ^
+    }), 200
+    ^^
+  File "C:\Users\omdpa\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\json\__init__.py", line 170, in jsonify
+    return current_app.json.response(*args, **kwargs)  # type: ignore[return-value]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\omdpa\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\json\provider.py", line 214, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=self.mimetype
+       ~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omdpa\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\json\provider.py", line 179, in dumps
+    return json.dumps(obj, **kwargs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\omdpa\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "C:\Users\omdpa\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\omdpa\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\omdpa\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\json\provider.py", line 121, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type ObjectId is not JSON serializable

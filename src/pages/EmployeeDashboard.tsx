@@ -7,10 +7,10 @@ import { ScoreGauge } from '@/components/dashboard/ScoreGauge';
 import { useAuth } from '@/contexts/AuthContext';
 import { generateMockWorkEntries, calculatePerformanceMetrics, getWeeklyChartData } from '@/data/mockData';
 import { WorkEntry } from '@/types';
-import { 
-  Target, 
-  Clock, 
-  CheckCircle2, 
+import {
+  Target,
+  Clock,
+  CheckCircle2,
   AlertTriangle,
   Calendar,
   TrendingUp
@@ -49,7 +49,7 @@ export default function EmployeeDashboard() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <motion.div
@@ -166,10 +166,10 @@ export default function EmployeeDashboard() {
                 {entries.slice(0, 5).map((entry) => (
                   <tr key={entry.id} className="border-b border-border/50">
                     <td className="py-3 text-sm">
-                      {entry.date.toLocaleDateString('en-US', { 
-                        weekday: 'short', 
-                        month: 'short', 
-                        day: 'numeric' 
+                      {entry.date.toLocaleDateString('en-US', {
+                        weekday: 'short',
+                        month: 'short',
+                        day: 'numeric'
                       })}
                     </td>
                     <td className="py-3 text-sm">
@@ -178,13 +178,12 @@ export default function EmployeeDashboard() {
                     <td className="py-3 text-sm">{entry.workingHours}h</td>
                     <td className="py-3 text-sm">{entry.deadlinesMet}</td>
                     <td className="py-3">
-                      <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                        (entry.productivityScore || 0) >= 80 
-                          ? 'bg-success/10 text-success' 
-                          : (entry.productivityScore || 0) >= 60 
-                          ? 'bg-secondary/10 text-secondary' 
-                          : 'bg-warning/10 text-warning'
-                      }`}>
+                      <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${(entry.productivityScore || 0) >= 80
+                          ? 'bg-success/10 text-success'
+                          : (entry.productivityScore || 0) >= 60
+                            ? 'bg-secondary/10 text-secondary'
+                            : 'bg-warning/10 text-warning'
+                        }`}>
                         {entry.productivityScore}
                       </span>
                     </td>

@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "C:\Users\omdpa\Desktop\CHARUSAT\sem 6\SGP IV\SGP PROJECT\EMPLOYEE PERFORMANCE SYSTEM\backend\test_endpoint2.py", line 13, in <module>
+    get_employee_detail('6992d262705fbb1cdf378a5e')
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omdpa\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\omdpa\Desktop\CHARUSAT\sem 6\SGP IV\SGP PROJECT\EMPLOYEE PERFORMANCE SYSTEM\backend\routes\manager_routes.py", line 193, in get_employee_detail
+    department = get_manager_dept(current_user_id)
+  File "C:\Users\omdpa\Desktop\CHARUSAT\sem 6\SGP IV\SGP PROJECT\EMPLOYEE PERFORMANCE SYSTEM\backend\routes\manager_routes.py", line 15, in get_manager_dept
+    user = db.users.find_one({"_id": ObjectId(current_user_id)})
+                                     ~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\omdpa\AppData\Local\Programs\Python\Python313\Lib\site-packages\bson\objectid.py", line 116, in __init__
+    _raise_invalid_id(oid)
+    ~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\omdpa\AppData\Local\Programs\Python\Python313\Lib\site-packages\bson\objectid.py", line 37, in _raise_invalid_id
+    raise InvalidId(
+    ...<2 lines>...
+    )
+bson.errors.InvalidId: 'manager_id' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string

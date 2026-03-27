@@ -16,11 +16,11 @@ export default function WorkEntry() {
   const { user } = useAuth();
   const navigate = useNavigate();
   const { toast } = useToast();
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [productivityScore, setProductivityScore] = useState<number | null>(null);
-  
+
   const [formData, setFormData] = useState({
     date: new Date().toISOString().split('T')[0],
     tasksAssigned: '',
@@ -50,7 +50,7 @@ export default function WorkEntry() {
 
     const baseScore = (completionRate * 40 + deadlineRate * 40 + hoursEfficiency * 20);
     const finalScore = Math.min(100, Math.round(baseScore * delayPenalty * complexityBonus));
-    
+
     return finalScore;
   };
 
@@ -76,12 +76,12 @@ export default function WorkEntry() {
 
       // Simulate saving
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       toast({
         title: 'Work entry saved!',
         description: 'Your productivity score has been calculated and recorded.',
       });
-      
+
       navigate('/dashboard');
     } catch (error) {
       toast({
@@ -102,13 +102,13 @@ export default function WorkEntry() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <div className="container mx-auto px-4 py-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <button 
+          <button
             onClick={() => navigate(-1)}
             className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
@@ -252,7 +252,7 @@ export default function WorkEntry() {
                         </>
                       )}
                     </Button>
-                    
+
                     <Button type="submit" variant="hero" disabled={isSubmitting}>
                       {isSubmitting ? (
                         <>
@@ -282,12 +282,12 @@ export default function WorkEntry() {
                 <h3 className="mb-6 text-lg font-semibold text-foreground">
                   AI Productivity Score
                 </h3>
-                
+
                 {productivityScore !== null ? (
                   <>
                     <ScoreGauge score={productivityScore} size="lg" />
                     <p className="mt-6 text-center text-sm text-muted-foreground">
-                      Your score is calculated using machine learning based on task completion, 
+                      Your score is calculated using machine learning based on task completion,
                       deadline adherence, and working hours.
                     </p>
                   </>
@@ -297,7 +297,7 @@ export default function WorkEntry() {
                       <Sparkles className="h-8 w-8 text-muted-foreground" />
                     </div>
                     <p className="text-sm text-muted-foreground">
-                      Fill in your work details and click "Analyze with AI" to see your 
+                      Fill in your work details and click "Analyze with AI" to see your
                       predicted productivity score.
                     </p>
                   </div>

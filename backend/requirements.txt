@@ -1,0 +1,17 @@
+flask
+flask-cors
+pymongo
+scikit-learn
+pandas
+numpy
+python-dotenv
+flask-jwt-extended
+bcrypt
+email_validator
+flask-mail
+dnspython
+nltk
+joblib
+fpdf2
+pillow
+google-generativeai

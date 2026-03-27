@@ -1,17 +1,25 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
-import { 
-  DropdownMenu, 
-  DropdownMenuContent, 
-  DropdownMenuItem, 
-  DropdownMenuSeparator, 
-  DropdownMenuTrigger 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { BarChart3, LogOut, Settings, User, Menu } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import {
+  LogOut,
+  User as UserIcon,
+  Settings,
+  Menu,
+  X
+} from 'lucide-react';
 import { useState } from 'react';
-
+import { ThemeToggle } from '@/components/theme-toggle';
+import logoImg from '@/assets/logo.png';
 export function Navbar() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -33,13 +41,11 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border/50 bg-card/80 backdrop-blur-md">
       <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link to={user ? (user.role === 'admin' ? '/admin' : '/dashboard') : '/'} className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary">
-              <BarChart3 className="h-5 w-5 text-primary-foreground" />
-            </div>
-            <span className="hidden font-semibold text-foreground sm:block">PerformanceAI</span>
+          <Link to={user ? (user.role === 'admin' ? '/admin' : '/dashboard') : '/'} className="flex items-center gap-3">
+            <img src="/logo.png" alt="WorkVision Logo" className="h-16 w-16 object-contain" />
+            <span className="hidden font-bold text-lg text-foreground sm:block">WorkVision</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -100,13 +106,17 @@ export function Navbar() {
                       </div>
                     </div>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem>
-                      <User className="mr-2 h-4 w-4" />
-                      Profile
+                    <DropdownMenuItem asChild>
+                      <Link to="/profile" className="w-full cursor-pointer">
+                        <UserIcon className="mr-2 h-4 w-4" />
+                        Profile
+                      </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <Settings className="mr-2 h-4 w-4" />
-                      Settings
+                    <DropdownMenuItem asChild>
+                      <Link to="/settings" className="w-full cursor-pointer">
+                        <Settings className="mr-2 h-4 w-4" />
+                        Settings
+                      </Link>
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem onClick={handleLogout} className="text-destructive">
@@ -117,9 +127,9 @@ export function Navbar() {
                 </DropdownMenu>
 
                 {/* Mobile Menu Button */}
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
+                <Button
+                  variant="ghost"
+                  size="icon"
                   className="md:hidden"
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
@@ -175,3 +185,4 @@ export function Navbar() {
     </nav>
   );
 }
+
