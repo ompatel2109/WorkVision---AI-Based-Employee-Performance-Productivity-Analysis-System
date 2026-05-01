@@ -84,7 +84,7 @@ After initializing the database via `python backend/reseed_system.py`, you can t
 | Role | Email Address | Password |
 | :--- | :--- | :--- |
 | **Admin Overlord** | `admin@workvision.com` | `admin123` |
-| **Engineering Manager** | `manager.eng@workvision.com` | `manager123` |
+| **Engineering Manager** | `manager@engineering.com` | `password123` |
 | **Employee (Test)** | `employee1@workvision.com` | `user123` |
 
 *Other available department managers include:*
